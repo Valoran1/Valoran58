@@ -72,13 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function addMessage(role, text) {
     const div = document.createElement("div");
-    div.className = `message ${role}-message fade-in`;
+    // Samo sprememba class-ov za CSS podporo mehurčkov
+    const roleClass = role === "user" ? "user-msg" : "bot-msg";
+    div.className = `${roleClass} fade-in`;
     div.textContent = text;
     chatLog.appendChild(div);
     chatLog.scrollTop = chatLog.scrollHeight;
     return div;
   }
 });
+
 
 
 
