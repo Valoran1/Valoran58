@@ -10,20 +10,11 @@
   </head>
   <body style="font-family: 'IBM Plex Sans', sans-serif; background-color: #101010;">
     <div class="container">
-
-      <!-- Hero sekcija z email capture -->
       <section class="hero">
-        <img src="Logo_dark_bg_1MP.png" alt="Valoran Logo" class="logo"/>
-        <h1 class="hero-title">Men are getting weaker. This ends now.</h1>
-        <p class="subtitle">Your AI mentor for discipline, strength, and clarity.</p>
-        
-        <form id="email-form" class="email-form">
-          <input type="email" id="email-input" placeholder="Enter your email" required>
-          <button type="submit" class="cta-button">Get Access</button>
-        </form>
+        <img src="Logo.png" alt="Valoran Logo" class="logo"/>
+        <p class="subtitle">Tvoj AI mentor za disciplino, moč in jasnost</p>
       </section>
 
-      <!-- Chat -->
       <section id="chat-box" class="chat-container"></section>
 
       <form id="chat-form" class="chat-form">
@@ -40,25 +31,7 @@
     </div>
 
     <script src="script.js"></script>
-
-    <!-- JS za shranjevanje emailov -->
-    <script>
-      document.getElementById('email-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('email-input').value.trim();
-        if (email) {
-          let storedEmails = JSON.parse(localStorage.getItem('valoran_emails')) || [];
-          if (!storedEmails.includes(email)) {
-            storedEmails.push(email);
-            localStorage.setItem('valoran_emails', JSON.stringify(storedEmails));
-          }
-          alert('Thanks! You will get access soon.');
-          document.getElementById('email-input').value = '';
-        }
-      });
-    </script>
   </body>
 </html>
-
 
 
